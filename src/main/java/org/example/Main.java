@@ -1,27 +1,37 @@
 package org.example;
 
-
 import org.example.model.Vehicle;
 import org.example.service.VehicleService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-
-import java.util.List;
+import org.springframework.stereotype.Component;
 
 @SpringBootApplication
-public class Main {
+@Component
+public class Main implements CommandLineRunner {
 
-    public static void main(String[] args) {
-        ApplicationContext context = SpringApplication.run(Main.class, args);
+    @Autowired
+    @Qualifier("VehicleService1")
+    private VehicleService vehicleService1;
 
-        VehicleService vehicleService = context.getBean(VehicleService.class);
+    @Autowired
+    @Qualifier("VehicleService2")
+    private VehicleService vehicleService2;
 
-        List<Vehicle> vehicles = vehicleService.generateVehicleList(5);
-        Vehicle mostExpensiveVehicle = vehicleService.findMostExpensiveVehicle(vehicles);
+    @Override
+    public void run(String... args) {
+
+        vehicleService1.generateVehicleList(10);
+
+        Vehicle mostExpensiveVehicle = vehicleService1.findMostExpensiveVehicle();
 
         System.out.println("Most expensive vehicle: " + mostExpensiveVehicle);
+    }
 
-        SpringApplication.exit(context);
+    public static void main(String[] args) {
+        SpringApplication.run(Main.class, args);
     }
 }

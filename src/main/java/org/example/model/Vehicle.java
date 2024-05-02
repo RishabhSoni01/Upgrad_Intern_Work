@@ -8,7 +8,7 @@ import java.util.Random;
 public class Vehicle {
     private Speaker speaker;
     private Tyre tyre;
-    private int price;
+    public int price;
 
     @Autowired
     public Vehicle(SpeakerService speakerService, TyreService tyreService) {
