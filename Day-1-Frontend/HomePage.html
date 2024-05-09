@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="HomePage.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">My Contacts</h1>
+  </header>
+  <div class="search-bar">
+    <i class="fas fa-search search-icon"></i> <input type="text" id="search-box" placeholder="Search by Name">
+    <i class="fas fa-sort sort-icon" id="sort-icon"></i>
+  </div>
+  <h2 class="contacts-heading" style="margin-left:35px;">Contacts</h2>
+  <ul id="contacts-list">
+    <li class="contact-item">
+      <div>
+        <span class="contact-name"></span><br>
+        <span class="contact-number"></span>
+      </div>
+    </li> 
+  </ul>
+  
+  <div id="no-contacts" style="display: none;">No contacts available</div>
+
+  <div class="add-contact-container">
+    <!-- Use an anchor tag with an href attribute pointing to the AddContact page -->
+    <a href="AddContact.html" class="add-contact-icon" style="text-decoration: none;">+</a>
+  </div>
+  <div class="pagination">
+     <button id="prev-page"><i class="fas fa-angle-left"></i></button>
+    <button class="page-button" data-page="1">1</button>
+    <button class="page-button" data-page="2">2</button>
+    <button class="page-button" data-page="3">3</button>
+    <button id="next-page"><i class="fas fa-angle-right"></i></button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Contact</title>
+  <link rel="stylesheet" href="EditContact.css">
+</head>
+<body>
+  <div class="profile">
+    <div>
+      <h2>Edit Profile</h2>
+      <form id="profile-form" onsubmit="updateContact(event)">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="number">Phone Number</label>
+          <input type="tel" name="number" id="number" required>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" name="dob" id="dob">
+        </div>
+        <div class="form-group">
+          <label for="address">Country/Region</label>
+          <input type="text" name="address" id="address">
+        </div>
+        <button type="submit" class="submit-btn">Update</button>
+      </form>
+    </div>
+  </div>
+  <script src="edit-contacts.js"></script>
+</body>
+</html>

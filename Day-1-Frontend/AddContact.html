@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Contact</title>
+  <link rel="stylesheet" href="AddContact.css">
+</head>
+<body>
+  <div class="profile">
+    <div>
+      <h2>Add Profile</h2>
+      <form id="profile-form" onsubmit="addContact(event)">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="number">Phone Number</label>
+          <input type="tel" name="number" id="number" required>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" name="dob" id="dob">
+        </div>
+        <div class="form-group">
+          <label for="address">Country/Region</label>
+          <input type="text" name="address" id="address">
+        </div>
+        <button type="submit" class="submit-btn">Create</button>
+      </form>
+    </div>
+  </div>
+  <script src="edit.js"></script>
+  <script>
+    function addContact(event) {
+      event.preventDefault();
+
+      const formData = new FormData(document.getElementById('profile-form'));
+      const newContact = {};
+      formData.forEach((value, key) => {
+        newContact[key] = value;
+      });
+
+      fetch('http://localhost:8181/api/contacts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newContact)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to add contact');
+        }
+        alert('Contact added successfully!');
+        document.getElementById('profile-form').reset();
+      })
+      .catch(error => {
+        console.error('Error adding contact:', error);
+        alert('An error occurred while adding the contact. Please try again later.');
+      });
+    }
+  </script>
+</body>
+</html>
