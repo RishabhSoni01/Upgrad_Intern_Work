@@ -1,0 +1,156 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: white;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+    color: black;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc; /* Placeholder color for avatar */
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 10px auto;
+    max-width: 500px;
+  }
+  
+  .search-icon {
+    margin-right: 5px;
+    color: #ccc;
+  }
+  
+  #search-box {
+    width: 100%;
+    border: none;
+    font-size: 1em;
+  }
+  
+  .contacts-heading {
+    text-align: left;
+    color: black;
+    margin: 5px 0; /* Adjusted margin */
+  }
+  
+  #contacts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px; /* Adjusted padding */
+    border-bottom: 1px dotted #ccc; /* Dotted line between contacts */
+  }
+  
+  .contact-item:last-child {
+    border-bottom: none;
+  }
+  
+  .contact-icon {
+    font-size: 1.2em;
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  .contact-name {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .contact-number {
+    color: #666;
+  }
+  
+  .contact-options {
+    font-size: 1.2em;
+    color: #ccc;
+    margin-left: auto; /* Pushes the icon to the right */
+  }
+  
+  .add-contact-container {
+    position: relative;
+    margin-bottom: 40px; /* Added margin for spacing */
+  }
+  
+  .add-contact-icon {
+    position: absolute;
+    right: 10%; /* Align to the center */
+    top : 1%;
+    transform: translateX(50%); /* Adjust horizontal position */
+    font-size: 36px;
+    color: white;
+    background-color: blue;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+  }
+  
+  .pagination {
+    text-align: center;
+    margin-top: 20px; /* Adjusted top margin */
+    margin-bottom: 20px; /* Adjusted bottom margin */
+  }
+  
+  .page-button {
+    background-color: #ccc;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  #next-page,
+  #prev-page {
+    background-color: #ccc;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  /* Media Query for Mobile */
+  @media screen and (max-width: 600px) {
+    .search-bar {
+      max-width: 100%;
+    }
+  
+    .contact-item {
+      padding: 10px; /* Adjusted padding */
+    }
+  
+    .add-contact-icon {
+      right: 5%; /* Adjusted position */
+    }
+  }
+  

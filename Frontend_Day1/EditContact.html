@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Editor</title>
+  <link rel="stylesheet" href="EditContact.css">
+</head>
+<body>
+  <div class="profile">
+    <h2>Profile</h2>
+    <div class="image-upload">
+      <input type="file" id="profile-image" accept="image/*">
+     
+    </div>
+  </div>
+  <form id="profile-form">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required>
+    </div>
+    <div class="form-group">
+      <label for="dob">Date of Birth</label>
+      <input type="date" name="dob" id="dob">
+    </div>
+    <div class="form-group">
+      <label for="country">Country/Region</label>
+      <input type="text" name="country" id="country">
+    </div>
+    <button type="submit" id="save-button">Save Changes</button>
+  </form>
+  <script src="EditContact.js"></script>
+</body>
+</html>
